@@ -1,0 +1,10 @@
+{
+  "name": "com.beytullahcetin.formatabletext",
+  "version": "1.0.0",
+  "displayName": "Formatable Text",
+  "description": "This is a simple package to format texts.",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6",
+    "com.dbrizov.naughtyattributes": "2.1.4"
+  }
+}
