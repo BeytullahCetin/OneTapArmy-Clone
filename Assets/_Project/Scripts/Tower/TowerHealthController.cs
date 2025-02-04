@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ public class TowerHealthController : MonoBehaviour
 		set
 		{
 			maxHp = value;
-			UpdateHealthBar(currentHp);
+			UpdateHealthBar();
 		}
 	}
 
@@ -26,7 +27,7 @@ public class TowerHealthController : MonoBehaviour
 		set
 		{
 			currentHp = value;
-			UpdateHealthBar(currentHp);
+			UpdateHealthBar();
 		}
 	}
 
@@ -41,11 +42,15 @@ public class TowerHealthController : MonoBehaviour
 		Hp = maxHp;
 	}
 
-	private void UpdateHealthBar(float hp)
+	[Button]
+	public void UpdateHealthBar()
 	{
-		healthBar.maxValue = maxHp;
-		healthBar.value = hp;
+		if (currentHp > maxHp)
+			currentHp = maxHp;
 
-		towerHudController.Health.FillText($"{hp}", $"{maxHp}");
+		healthBar.maxValue = maxHp;
+		healthBar.value = currentHp;
+
+		towerHudController.Health.FillText($"{currentHp}", $"{maxHp}");
 	}
 }

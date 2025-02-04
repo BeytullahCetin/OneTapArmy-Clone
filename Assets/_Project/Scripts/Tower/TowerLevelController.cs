@@ -1,8 +1,10 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class TowerLevelController : MonoBehaviour
 {
 	TowerHudController towerHudController;
+	TowerModelController towerModelController;
 
 	public int Level
 	{
@@ -10,7 +12,7 @@ public class TowerLevelController : MonoBehaviour
 		set
 		{
 			currentLevel = value;
-			towerHudController.Level.FillText($"{currentLevel}");
+			UpdateLevel();
 		}
 	}
 	[SerializeField] int currentLevel = 1;
@@ -18,10 +20,18 @@ public class TowerLevelController : MonoBehaviour
 	private void Awake()
 	{
 		towerHudController = GetComponent<TowerHudController>();
+		towerModelController = GetComponent<TowerModelController>();
 	}
 
 	public void Initialize()
 	{
 		Level = 1;
+	}
+
+	[Button]
+	public void UpdateLevel()
+	{
+		towerHudController.Level.FillText($"{currentLevel}");
+		towerModelController.UpdateModel();
 	}
 }

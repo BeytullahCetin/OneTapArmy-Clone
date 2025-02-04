@@ -35,7 +35,7 @@ public class TowerModelController : MonoBehaviour
 	}
 
 	[Button]
-	private void UpdateModel()
+	public void UpdateModel()
 	{
 		currentTowerModel = GetTowerModelLevel(towerLevelController.Level);
 		DisableAllTowerModels();

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class TowerHudController : MonoBehaviour
 {
 	[SerializeField] Slider healthBar;
-	[SerializeField] Slider spawnBar;
+	[SerializeField] Image spawnBar;
 
 	[SerializeField] FormatableText health;
 	[SerializeField] FormatableText level;
 
 	public Slider HealthBar => healthBar;
-	public Slider SpawnBar => spawnBar;
+	public Image SpawnBar => spawnBar;
 
 	public FormatableText Health => health;
 	public FormatableText Level => level;
