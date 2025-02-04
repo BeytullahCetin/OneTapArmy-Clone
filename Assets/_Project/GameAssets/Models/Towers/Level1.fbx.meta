@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Blue_TowerKit_mat
-    second: {fileID: 2100000, guid: 2dc729d0e006c314398c481acb305a02, type: 2}
+    second: {fileID: 2100000, guid: 0dd1442f98251ff4587b7ded8391fdee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

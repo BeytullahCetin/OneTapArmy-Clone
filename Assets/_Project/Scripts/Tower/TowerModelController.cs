@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class TowerModelController : MonoBehaviour
 {
-
 	[SerializeField] List<TowerModel> towerModels = new List<TowerModel>();
+	[SerializeField] Material material;
+
 	TowerModel currentTowerModel;
 	TowerLevelController towerLevelController;
 
@@ -54,6 +55,20 @@ public class TowerModelController : MonoBehaviour
 	public void EnableTowerModel(TowerModel towerModelLevel)
 	{
 		towerModelLevel.model.gameObject.SetActive(true);
+	}
+
+	[Button]
+	public void UpdateMaterial()
+	{
+		List<Material> materials = new List<Material>();
+		materials.Add(material);
+		foreach (var towerModel in towerModels)
+		{
+			foreach (var meshRenderer in towerModel.model.GetComponentsInChildren<MeshRenderer>())
+			{
+				meshRenderer.SetMaterials(materials);
+			}
+		}
 	}
 }
 
