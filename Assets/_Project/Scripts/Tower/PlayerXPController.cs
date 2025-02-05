@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class PlayerXPController : MonoBehaviour
 {
 	public UnityEvent PostIncreaseXPEvent { get; private set; }
+	public UnityEvent LevelIncreasedEvent { get; private set; }
 
 	[SerializeField] LevelsSO levelsSO;
 
@@ -35,6 +36,8 @@ public class PlayerXPController : MonoBehaviour
 			currentLevel++;
 			currentLevelXp -= currentLevelData.xpRequired;
 			currentLevelData = levelsSO.GetLevelData(currentLevel);
+
+			LevelIncreasedEvent.Invoke();
 		}
 
 		xPUI.UpdateXPUI(currentLevel, currentLevelXp, currentLevelData.xpRequired);
@@ -45,6 +48,7 @@ public class PlayerXPController : MonoBehaviour
 	{
 		xPUI = FindAnyObjectByType<XPUI>();
 		PostIncreaseXPEvent = new UnityEvent();
+		LevelIncreasedEvent = new UnityEvent();
 	}
 
 	public void Initialize()

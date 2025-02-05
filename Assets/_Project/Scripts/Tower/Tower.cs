@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
 		towerSpawn = GetComponent<TowerSpawnController>();
 	}
 
-	private void Start()
+	public void Initialize()
 	{
 		towerLevel.Initialize();
 		towerModel.Initialize();

@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTower : MonoBehaviour
+public class EnemyTower : MonoBehaviour
 {
 	Tower tower;
-	PlayerXPController xPController;
 
 	private void Awake()
 	{
 		tower = GetComponent<Tower>();
-		xPController = GetComponent<PlayerXPController>();
 	}
 
 	public void Initialize()
 	{
 		tower.Initialize();
-		xPController.Initialize();
 	}
 }

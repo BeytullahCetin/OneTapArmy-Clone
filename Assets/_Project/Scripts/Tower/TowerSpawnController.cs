@@ -11,6 +11,7 @@ public class TowerSpawnController : MonoBehaviour
 	TowerHudController towerHudController;
 	Tweener spawnTweener;
 
+	bool isSpawningStarted;
 
 	private void Awake()
 	{
@@ -19,9 +20,7 @@ public class TowerSpawnController : MonoBehaviour
 
 	public void Initialize()
 	{
-		towerHudController.SpawnBar.fillAmount = 0;
-		towerHudController.SpawnBar.fillAmount = 1;
-		StartSpawning();
+		RestartSpawning();
 	}
 
 	[Button]
@@ -35,7 +34,10 @@ public class TowerSpawnController : MonoBehaviour
 
 	async private void StartSpawning()
 	{
-		while (true)
+		towerHudController.SpawnBar.fillAmount = 0; // Anında sıfırla
+		isSpawningStarted = true;
+
+		while (isSpawningStarted)
 		{
 			towerHudController.SpawnBar.fillAmount = 0;
 			spawnTweener = towerHudController.SpawnBar
@@ -45,7 +47,25 @@ public class TowerSpawnController : MonoBehaviour
 			spawnTweener.timeScale = 1 / spawnDuration;
 			await spawnTweener;
 
+			if (!isSpawningStarted)
+				break;
+
 			// Debug.Log("Spawn");
 		}
+	}
+
+	private void StopSpwaning()
+	{
+		isSpawningStarted = false;
+		if (spawnTweener != null && spawnTweener.IsActive())
+		{
+			spawnTweener.Kill(true);
+		}
+	}
+
+	private void RestartSpawning()
+	{
+		StopSpwaning();
+		StartSpawning();
 	}
 }
