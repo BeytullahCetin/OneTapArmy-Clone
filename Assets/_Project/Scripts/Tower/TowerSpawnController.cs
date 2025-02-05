@@ -45,7 +45,7 @@ public class TowerSpawnController : MonoBehaviour
 			spawnTweener.timeScale = 1 / spawnDuration;
 			await spawnTweener;
 
-			Debug.Log("Spawn");
+			// Debug.Log("Spawn");
 		}
 	}
 }
