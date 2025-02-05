@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07fac7ed54d29649b604a03524f2ad2, type: 3}
+  m_Name: AudioConfigSO
+  m_EditorClassIdentifier: 
+  menuBg: {fileID: 0}
+  gameBg: {fileID: 0}
+  primaryButtonClick: {fileID: 0}
+  secondaryButtonClick: {fileID: 0}
+  succesButtonClick: {fileID: 0}
+  infoButtonClick: {fileID: 0}
+  warningButtonClick: {fileID: 0}
+  dangerButtonClick: {fileID: 0}
+  levelUp: {fileID: 0}
+  xpGain: {fileID: 0}
+  towerHit: {fileID: 0}
+  towerCollapse: {fileID: 0}
+  soldierCreated: {fileID: 0}
+  soldierDeath: {fileID: 0}
+  soldierSwordHit: {fileID: 0}
+  soldierAxeHit: {fileID: 0}
+  soldierArrowHit: {fileID: 0}
+  soldierStep: {fileID: 0}

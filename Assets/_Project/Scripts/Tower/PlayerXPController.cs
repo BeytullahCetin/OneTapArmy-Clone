@@ -10,14 +10,14 @@ public class PlayerXPController : MonoBehaviour
 	public UnityEvent PostIncreaseXPEvent { get; private set; }
 	public UnityEvent LevelIncreasedEvent { get; private set; }
 
-	[SerializeField] LevelsSO levelsSO;
+	[Expandable][SerializeField] XPLevelsSO levelsSO;
 
 	[SerializeField] int currentLevel;
 	[SerializeField] float currentXp;
 	[SerializeField] float currentLevelXp;
 
 	XPUI xPUI;
-	LevelData currentLevelData;
+	XPLevelData currentLevelData;
 
 
 	[Button]

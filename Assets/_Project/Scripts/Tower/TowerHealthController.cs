@@ -1,13 +1,14 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TowerHealthController : MonoBehaviour
 {
+	public UnityEvent TowerDeadEvent { get; private set; }
 	TowerHudController towerHudController;
 
 	[SerializeField] Slider healthBar;
-
 	[SerializeField] float maxHp = 3000;
 	[SerializeField] float currentHp;
 
@@ -34,6 +35,7 @@ public class TowerHealthController : MonoBehaviour
 	private void Awake()
 	{
 		towerHudController = GetComponent<TowerHudController>();
+		TowerDeadEvent = new UnityEvent();
 	}
 
 	public void Initialize()
@@ -42,7 +44,22 @@ public class TowerHealthController : MonoBehaviour
 		Hp = maxHp;
 	}
 
+	public void DecreaseHealth(float hp)
+	{
+		Hp -= hp;
+
+		if (Hp <= 0)
+		{
+			TowerDeadEvent.Invoke();
+		}
+	}
+
 	[Button]
+	public void DecreaseHealthTest()
+	{
+		DecreaseHealth(1000);
+	}
+
 	public void UpdateHealthBar()
 	{
 		if (currentHp > maxHp)

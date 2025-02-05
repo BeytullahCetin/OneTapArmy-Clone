@@ -1,27 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using NaughtyAttributes;
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 	[SerializeField] TowersManager towersManager;
+	[SerializeField] LevelManager levelManager;
+	[SerializeField] MainMenuManager mainMenuManager;
 
 	private void Start()
 	{
-
+		levelManager.LoadLevel();
+		mainMenuManager.Initialize();
 	}
 
-	[Button]
-	private void StartTowers()
+	public void StartGame(int levelIndex)
 	{
-		towersManager.GetTowerReferances();
+		PrepareGame(levelIndex);
+		towersManager.Initialize();
+	}
 
-		towersManager.PlayerTower.Initialize();
-		foreach (var enemyTower in towersManager.EnemyTowers)
-		{
-			enemyTower.Initialize();
-		}
+	public void PrepareGame(int levelIndex)
+	{
+		LevelData levelData = levelManager.LevelsSO.LevelDataList[levelIndex];
+		towersManager.SetEnemyTowerCount(levelData.enemyCount);
+	}
+
+	public void StopGame()
+	{
+		Debug.Log("TODO: Stop Game");
 	}
 }

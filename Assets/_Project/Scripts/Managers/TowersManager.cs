@@ -1,18 +1,62 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TowersManager : MonoBehaviour
 {
-	PlayerTower playerTower;
-	EnemyTower[] enemyTowers;
-
 	public PlayerTower PlayerTower => playerTower;
-	public EnemyTower[] EnemyTowers => enemyTowers;
+	public List<EnemyTower> EnemyTowers => enemyTowers;
 
-	public void GetTowerReferances()
+	[SerializeField] PlayerTower playerTower;
+	[SerializeField] List<EnemyTower> enemyTowers = new List<EnemyTower>();
+
+	TowerHealthController playerHealthController;
+	List<TowerHealthController> enemyHealthControllers = new List<TowerHealthController>();
+
+	public void Initialize()
 	{
-		playerTower = FindAnyObjectByType<PlayerTower>();
-		enemyTowers = FindObjectsByType<EnemyTower>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+		ListenTowerHealths();
+		InitializeTowers();
+	}
+
+	public void InitializeTowers()
+	{
+		PlayerTower.Initialize();
+		foreach (var enemyTower in EnemyTowers)
+		{
+			enemyTower.Initialize();
+		}
+	}
+
+	public void SetEnemyTowerCount(int count)
+	{
+		for (int i = 0; i < enemyTowers.Count; i++)
+		{
+			EnemyTower enemyTower = enemyTowers[i];
+			enemyTower.gameObject.SetActive(i < count);
+		}
+	}
+
+	public void ListenTowerHealths()
+	{
+		playerHealthController = playerTower.GetComponent<TowerHealthController>();
+		enemyTowers.ForEach(x => enemyHealthControllers.Add(x.GetComponent<TowerHealthController>()));
+
+		playerHealthController.TowerDeadEvent.RemoveListener(CheckTowerStatus);
+		playerHealthController.TowerDeadEvent.AddListener(CheckTowerStatus);
+
+		enemyHealthControllers.ForEach(x => x.TowerDeadEvent.RemoveListener(CheckTowerStatus));
+		enemyHealthControllers.ForEach(x => x.TowerDeadEvent.AddListener(CheckTowerStatus));
+	}
+
+	public void CheckTowerStatus()
+	{
+		Debug.Log("CheckTowerStatus");
+		if (playerHealthController.Hp <= 0)
+			Debug.Log("player dead! LOSE!");
+		else if (enemyHealthControllers.All(x => x.Hp <= 0))
+		{
+			Debug.Log("all enemies dead! WIN!");
+		}
 	}
 }
