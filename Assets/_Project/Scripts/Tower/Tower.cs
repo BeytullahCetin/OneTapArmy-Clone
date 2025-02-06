@@ -7,6 +7,10 @@ public class Tower : MonoBehaviour
 	TowerHealthController towerHealth;
 	TowerSpawnBar towerSpawn;
 
+	public TowerHealthController TowerHealth => towerHealth;
+
+	float startingMaxHP = 3000;
+
 	private void Awake()
 	{
 		towerLevel = GetComponent<TowerLevelController>();
@@ -19,7 +23,7 @@ public class Tower : MonoBehaviour
 	{
 		towerLevel.Initialize();
 		towerModel.Initialize();
-		towerHealth.Initialize();
+		towerHealth.Initialize(startingMaxHP);
 		towerSpawn.Initialize();
 	}
 }

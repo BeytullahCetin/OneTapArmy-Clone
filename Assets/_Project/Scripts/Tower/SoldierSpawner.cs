@@ -48,10 +48,14 @@ public class SoldierSpawner : MonoBehaviour
 
 		Soldier soldier = Instantiate(randomCard.SoldierPrefab, soldierSpawnPoints[currentSpawnIndex]);
 		soldier.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+		soldier.Initialize();
+
 		soldier.SoldierColorController.ChangeColor(soldierMaterial, soldierHealthColor);
 		soldier.SoldierHealth.Initialize(randomCard.Health);
 
 		towerSoldierController.Soldiers.Add(soldier);
+
+		soldier.SwitchToIdleState();
 
 		currentSpawnIndex++;
 	}

@@ -42,11 +42,11 @@ public class TowersManager : MonoBehaviour
 		playerHealthController = playerTower.GetComponent<TowerHealthController>();
 		enemyTowers.ForEach(x => enemyHealthControllers.Add(x.GetComponent<TowerHealthController>()));
 
-		playerHealthController.TowerDeadEvent.RemoveListener(CheckTowerStatus);
-		playerHealthController.TowerDeadEvent.AddListener(CheckTowerStatus);
+		playerHealthController.DeadEvent.RemoveListener(CheckTowerStatus);
+		playerHealthController.DeadEvent.AddListener(CheckTowerStatus);
 
-		enemyHealthControllers.ForEach(x => x.TowerDeadEvent.RemoveListener(CheckTowerStatus));
-		enemyHealthControllers.ForEach(x => x.TowerDeadEvent.AddListener(CheckTowerStatus));
+		enemyHealthControllers.ForEach(x => x.DeadEvent.RemoveListener(CheckTowerStatus));
+		enemyHealthControllers.ForEach(x => x.DeadEvent.AddListener(CheckTowerStatus));
 	}
 
 	public void CheckTowerStatus()

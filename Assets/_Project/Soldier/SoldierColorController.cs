@@ -8,7 +8,7 @@ public class SoldierColorController : MonoBehaviour
 	[SerializeField] GameObject objectToChangeMaterialParent;
 	SoldierHud soldierHud;
 
-	private void Awake()
+	public void Initialize()
 	{
 		soldierHud = GetComponent<SoldierHud>();
 	}

@@ -8,6 +8,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 575539023024656516, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 626842570160829576, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 736568732047072226, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
       propertyPath: soldierHealthColor.b
@@ -22,6 +32,31 @@ PrefabInstance:
         type: 3}
       propertyPath: soldierHealthColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 936465303110105961, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464844572090029098, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602016962295406113, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728288178548817202, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923247424366958953, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2132468298673437214, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
@@ -73,6 +108,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2175073741400949128, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399991658767666376, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521293191913241341, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3184003930950231135, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454571999409407038, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335848934954263695, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5665733249126583863, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -83,10 +148,65 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5878811542613481905, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921741139957698994, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560487195724164541, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6755235396071790047, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
       propertyPath: m_Name
       value: PlayerTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880473200928781600, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137719582977814639, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344027548633801287, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733815825377502097, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927736315801781582, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357530264758730319, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055736081525440992, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080487670617893112, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100,6 +220,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 9
       addedObject: {fileID: 6694587228128969340}
+    - targetCorrespondingSourceObject: {fileID: 6755235396071790047, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5101144747853754203}
   m_SourcePrefab: {fileID: 100100000, guid: 28f4b01305bea9044934ade7f72812c9, type: 3}
 --- !u!1 &1633068429944415438 stripped
 GameObject:
@@ -135,3 +259,19 @@ MonoBehaviour:
   currentLevel: 0
   currentXp: 0
   currentLevelXp: 0
+--- !u!114 &5101144747853754203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633068429944415438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be87cceea3b6454abec25bdf0eaf72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commandRayLayerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  maxRayDistance: 1000

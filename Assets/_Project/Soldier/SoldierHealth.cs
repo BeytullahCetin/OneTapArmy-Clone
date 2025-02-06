@@ -1,62 +1,22 @@
-using NaughtyAttributes;
-using UnityEngine;
 using UnityEngine.Events;
 
-public class SoldierHealth : MonoBehaviour
+public class SoldierHealth : Health
 {
-	public UnityEvent SoldierDeadEvent { get; private set; }
-
-	Soldier soldier;
 	SoldierHud soldierHud;
 
-	float maxHp;
-	[ReadOnly][SerializeField] float currentHp;
-
-	private void Awake()
+	public override void Initialize(float maxHp)
 	{
 		soldierHud = GetComponent<SoldierHud>();
-	}
+		soldierHud.HealthBar.minValue = 0;
 
-	public void Initialize(float maxHp)
-	{
 		this.maxHp = maxHp;
 		currentHp = maxHp;
-		SoldierDeadEvent = new UnityEvent();
+		DeadEvent = new UnityEvent();
 
 		UpdateHealthBar();
 	}
 
-	public float MaxHP
-	{
-		get => maxHp;
-		set
-		{
-			maxHp = value;
-			UpdateHealthBar();
-		}
-	}
-
-	public float Hp
-	{
-		get => currentHp;
-		set
-		{
-			currentHp = value;
-			UpdateHealthBar();
-		}
-	}
-
-	public void DecreaseHealth(float hp)
-	{
-		Hp -= hp;
-
-		if (Hp <= 0)
-		{
-			SoldierDeadEvent.Invoke();
-		}
-	}
-
-	private void UpdateHealthBar()
+	protected override void UpdateHealthBar()
 	{
 		soldierHud.HealthBar.maxValue = maxHp;
 		soldierHud.HealthBar.value = currentHp;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyTower : MonoBehaviour
 {
 	Tower tower;
+	public Tower Tower => tower;
 
 	private void Awake()
 	{

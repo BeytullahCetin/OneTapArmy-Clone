@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 8618915722510913400}
   - component: {fileID: 5627828185479323038}
   - component: {fileID: 6895921213815725647}
+  - component: {fileID: -7273281126141318598}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -498,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f099cb0c48ca14429366da97aefe75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3499755716747100637}
 --- !u!114 &5627828185479323038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +525,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acee716604780c42be2c0048d9197a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &-7273281126141318598
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807890349456452682}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.6
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &8937990396884034016
 GameObject:
   m_ObjectHideFlags: 0
