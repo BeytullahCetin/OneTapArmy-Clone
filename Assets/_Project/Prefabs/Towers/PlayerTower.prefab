@@ -8,6 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736568732047072226, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: soldierHealthColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 736568732047072226, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: soldierHealthColor.g
+      value: 0.44005203
+      objectReference: {fileID: 0}
+    - target: {fileID: 736568732047072226, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: soldierHealthColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2132468298673437214, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,6 +73,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5665733249126583863, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5665733249126583863, guid: 28f4b01305bea9044934ade7f72812c9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6755235396071790047, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
       propertyPath: m_Name
@@ -73,7 +98,7 @@ PrefabInstance:
       addedObject: {fileID: 2905797567784390811}
     - targetCorrespondingSourceObject: {fileID: 6755235396071790047, guid: 28f4b01305bea9044934ade7f72812c9,
         type: 3}
-      insertIndex: -1
+      insertIndex: 9
       addedObject: {fileID: 6694587228128969340}
   m_SourcePrefab: {fileID: 100100000, guid: 28f4b01305bea9044934ade7f72812c9, type: 3}
 --- !u!1 &1633068429944415438 stripped

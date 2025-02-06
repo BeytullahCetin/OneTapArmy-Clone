@@ -12,8 +12,8 @@ public class DeckCard : MonoBehaviour
 	[SerializeField] FormatableText cardName;
 	[SerializeField] Button selectButton;
 
-	DeckCardSO currentCardSO;
-	public DeckCardSO DeckCardSO => currentCardSO;
+	SoldierCardSO currentCardSO;
+	public SoldierCardSO DeckCardSO => currentCardSO;
 
 	// public GameObject Locked => locked;
 	// public GameObject Unlocked => unlocked;
@@ -21,7 +21,7 @@ public class DeckCard : MonoBehaviour
 	// public FormatableText CardName => cardName;
 	public Button SelectButton => selectButton;
 
-	public void SetSO(DeckCardSO soldierCardSO)
+	public void SetSO(SoldierCardSO soldierCardSO)
 	{
 		currentCardSO = soldierCardSO;
 

@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 3156585358817602432, guid: cbdde540e5cc3b54ebea39883010905f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.85
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3156585358817602432, guid: cbdde540e5cc3b54ebea39883010905f,
         type: 3}
@@ -138,6 +138,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cdee9cad288c592488194fb47a9d019b, type: 2}
+    - target: {fileID: 4696806373712702195, guid: cbdde540e5cc3b54ebea39883010905f,
+        type: 3}
+      propertyPath: soldierMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ba48a51e893abb41bc664a896f4cc18, type: 2}
+    - target: {fileID: 4696806373712702195, guid: cbdde540e5cc3b54ebea39883010905f,
+        type: 3}
+      propertyPath: soldierHealthColor.b
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696806373712702195, guid: cbdde540e5cc3b54ebea39883010905f,
+        type: 3}
+      propertyPath: soldierHealthColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696806373712702195, guid: cbdde540e5cc3b54ebea39883010905f,
+        type: 3}
+      propertyPath: soldierHealthColor.r
+      value: 0.1764706
+      objectReference: {fileID: 0}
     - target: {fileID: 5354669017863027270, guid: cbdde540e5cc3b54ebea39883010905f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

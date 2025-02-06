@@ -5022,7 +5022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuManager: {fileID: 641256517}
-  deckSO: {fileID: 11400000, guid: 4729a7ac2c51d4e48823f967a70be4fe, type: 2}
+  soldierDB: {fileID: 11400000, guid: 300401aa8cf855d4281b199454b32bf2, type: 2}
   deckCardPrefab: {fileID: 5625305137828395640, guid: b49fc8d9e2bdb984b9932d563d4ccf54,
     type: 3}
 --- !u!1 &1781832194
@@ -6937,6 +6937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 316.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021626978590851221, guid: af8d0ad712298e5409257935578db122,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 5923959665510988658, guid: af8d0ad712298e5409257935578db122,
         type: 3}

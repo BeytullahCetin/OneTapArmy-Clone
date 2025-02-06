@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ebcdb51fd3500440b7405c28c14ebc9, type: 3}
-  m_Name: DeckSO
+  m_Name: SoldierDB
   m_EditorClassIdentifier: 
-  deck:
+  soldiers:
   - {fileID: 11400000, guid: bab3c227c07f34c44b1f8d1eb3e53926, type: 2}
   - {fileID: 11400000, guid: 82a424cb236b62645942a724d1eaf80b, type: 2}
   - {fileID: 11400000, guid: 194aff6b636dee7409401f4e1f8d6d66, type: 2}
-  - {fileID: 11400000, guid: d7acad6f0900e044ea148d0e5bcccbc0, type: 2}
   - {fileID: 11400000, guid: 819e9ee3a77ffdf49b17f52429f30f4c, type: 2}
+  - {fileID: 11400000, guid: d7acad6f0900e044ea148d0e5bcccbc0, type: 2}

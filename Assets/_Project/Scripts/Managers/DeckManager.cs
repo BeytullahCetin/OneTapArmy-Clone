@@ -5,16 +5,18 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
 	[SerializeField] MainMenuManager mainMenuManager;
-	[SerializeField] DeckSO deckSO;
+	[SerializeField] SoldierDB soldierDB;
 	[SerializeField] DeckCard deckCardPrefab;
 
 	List<DeckCard> deckCards = new List<DeckCard>();
+
+	public SoldierDB SoldierDB => soldierDB;
 
 	public void CreateDeckCards()
 	{
 		CreatePlayerPrefsIfNotExists();
 
-		foreach (DeckCardSO cardSO in deckSO.Deck)
+		foreach (SoldierCardSO cardSO in soldierDB.SoldierCards)
 		{
 			DeckCard deckCard = Instantiate(deckCardPrefab, mainMenuManager.MainMenu.DeckCardsParent);
 			deckCards.Add(deckCard);
@@ -38,7 +40,7 @@ public class DeckManager : MonoBehaviour
 		}
 
 		DeckCard firstCard = deckCards.First();
-		DeckCardSO firstCardSO = firstCard.DeckCardSO;
+		SoldierCardSO firstCardSO = firstCard.DeckCardSO;
 
 		if (firstCardSO.IsLocked() == true)
 		{
@@ -60,7 +62,7 @@ public class DeckManager : MonoBehaviour
 
 	public void CreatePlayerPrefsIfNotExists()
 	{
-		foreach (DeckCardSO cardSO in deckSO.Deck)
+		foreach (SoldierCardSO cardSO in soldierDB.SoldierCards)
 		{
 			cardSO.SetPlayerPrefsIfNotExists();
 		}

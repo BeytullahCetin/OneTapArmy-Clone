@@ -2,18 +2,21 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "DeckCardSO", menuName = "ScriptableObjects/DeckCardSO")]
+[CreateAssetMenu(fileName = "SoldierCardSO", menuName = "ScriptableObjects/SoldierCardSO")]
 
-public class DeckCardSO : ScriptableObject
+public class SoldierCardSO : ScriptableObject
 {
 	public UnityEvent CardStateChanged { get; private set; }
 
 	public string Name => soldierName;
 	public Sprite Icon => icon;
+	public float Health => health;
+	public Soldier SoldierPrefab => soldierPrefab;
 
 	[SerializeField] string soldierName;
 	[ShowAssetPreview][SerializeField] Sprite icon;
-	[SerializeField] GameObject soldierPrefab;
+	[SerializeField] float health;
+	[SerializeField] Soldier soldierPrefab;
 
 	string CardLockPPKey => $"Card_IsLocked_{soldierName}";
 	string CardSelectPPKey => $"Card_IsSelected_{soldierName}";

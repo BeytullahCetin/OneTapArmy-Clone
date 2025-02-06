@@ -2,9 +2,13 @@ using UnityEngine;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
-public class TowerSpawnController : MonoBehaviour
+public class TowerSpawnBar : MonoBehaviour
 {
+	public UnityEvent SpawnEvent { get; private set; }
+	public UnityEvent RestartSpawningEvent { get; private set; }
+
 	[SerializeField] float spawnDuration = 1f;
 	[SerializeField] Ease spawnEase = Ease.Linear;
 
@@ -16,6 +20,8 @@ public class TowerSpawnController : MonoBehaviour
 	private void Awake()
 	{
 		towerHudController = GetComponent<TowerHudController>();
+		SpawnEvent = new UnityEvent();
+		RestartSpawningEvent = new UnityEvent();
 	}
 
 	public void Initialize()
@@ -50,7 +56,7 @@ public class TowerSpawnController : MonoBehaviour
 			if (!isSpawningStarted)
 				break;
 
-			// Debug.Log("Spawn");
+			SpawnEvent.Invoke();
 		}
 	}
 
@@ -67,5 +73,6 @@ public class TowerSpawnController : MonoBehaviour
 	{
 		StopSpwaning();
 		StartSpawning();
+		RestartSpawningEvent.Invoke();
 	}
 }
