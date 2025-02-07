@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,18 +23,23 @@ public class SoldierSpawner : MonoBehaviour
 		towerSpawnBar = GetComponent<TowerSpawnBar>();
 		towerSoldierController = GetComponent<TowerSoldierController>();
 		deckManager = FindAnyObjectByType<DeckManager>();
-		spawnableSoldierSOs = deckManager.SoldierDB.SoldierCards.Where(x => x.IsLocked() == false && x.IsSelected() == true).ToList();
+	}
+
+	public void Initialize()
+	{
+		spawnableSoldierSOs = deckManager.SpawnableSoldiers.ToList();
 	}
 
 	private void Start()
 	{
 		towerSpawnBar.SpawnEvent.AddListener(SpawnSoldier);
-		towerSpawnBar.RestartSpawningEvent.AddListener(ResetSpawnIndex);
+		towerSpawnBar.RestartSpawningEvent.AddListener(RestartSpawning);
 	}
 
-	private void ResetSpawnIndex()
+	private void RestartSpawning()
 	{
 		currentSpawnIndex = 0;
+		Initialize();
 	}
 
 	private void SpawnSoldier()
@@ -45,17 +49,19 @@ public class SoldierSpawner : MonoBehaviour
 
 		int randomIndex = Random.Range(0, spawnableSoldierSOs.Count);
 		SoldierCardSO randomCard = spawnableSoldierSOs[randomIndex];
+		SoldierLevel soldierLevel = randomCard.Levels[randomCard.CurrentCardLevelIndex];
 
-		Soldier soldier = Instantiate(randomCard.SoldierPrefab, soldierSpawnPoints[currentSpawnIndex]);
+		Soldier soldier = Instantiate(soldierLevel.soldierPrefab, soldierSpawnPoints[currentSpawnIndex]);
 		soldier.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+		soldier.SetTower(tower);
 		soldier.Initialize();
 
 		soldier.SoldierColorController.ChangeColor(soldierMaterial, soldierHealthColor);
-		soldier.SoldierHealth.Initialize(randomCard.Health);
+		soldier.SoldierHealth.Initialize(randomCard.Health * soldierLevel.healthMultiplier);
+		// TODO: Set attack damage
 
 		towerSoldierController.Soldiers.Add(soldier);
-
-		soldier.SwitchToIdleState();
 
 		currentSpawnIndex++;
 	}

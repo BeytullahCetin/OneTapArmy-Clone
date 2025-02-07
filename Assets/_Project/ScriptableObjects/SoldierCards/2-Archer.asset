@@ -12,8 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66697dc92d0cd042860aece1a8a4ecd, type: 3}
   m_Name: 2-Archer
   m_EditorClassIdentifier: 
-  soldierName: Archer
+  cardName: Archer
   icon: {fileID: 21300000, guid: 48170eb4ec17fe34485cdfbefeda1a7f, type: 3}
   health: 100
-  soldierPrefab: {fileID: 8791079033268047867, guid: 330e22d4767b5b245b7c474afc777fd3,
-    type: 3}
+  damage: 15
+  soldierLevels:
+  - icon: {fileID: 21300000, guid: 48170eb4ec17fe34485cdfbefeda1a7f, type: 3}
+    description: '-'
+    soldierPrefab: {fileID: 2109519515210850127, guid: bbc17671335c8c64ba68969141e67265,
+      type: 3}
+    healthMultiplier: 1
+    damageMultiplier: 1
+  - icon: {fileID: 21300000, guid: 4e33831ca055c32429cfbd3ae7f3cc52, type: 3}
+    description: 'Health +%15
+
+      Damage +%15'
+    soldierPrefab: {fileID: 2109519515210850127, guid: bbc17671335c8c64ba68969141e67265,
+      type: 3}
+    healthMultiplier: 1.15
+    damageMultiplier: 1.15
+  - icon: {fileID: 21300000, guid: fb76dded943e6b34db9be124fefd6c52, type: 3}
+    description: 'Health +%30
+
+      Damage +%30'
+    soldierPrefab: {fileID: 2109519515210850127, guid: bbc17671335c8c64ba68969141e67265,
+      type: 3}
+    healthMultiplier: 1.3
+    damageMultiplier: 1.3
+  - icon: {fileID: 21300000, guid: 18d829c824a7fa74b877ed8327c3c3e4, type: 3}
+    description: 'Health +%45
+
+      Damage +%45'
+    soldierPrefab: {fileID: 2109519515210850127, guid: bbc17671335c8c64ba68969141e67265,
+      type: 3}
+    healthMultiplier: 1.45
+    damageMultiplier: 1.45
+  - icon: {fileID: 21300000, guid: dd5afa969ee0b634ab43a99be77229c4, type: 3}
+    description: 'Health +%60
+
+      Damage +%60'
+    soldierPrefab: {fileID: 2109519515210850127, guid: bbc17671335c8c64ba68969141e67265,
+      type: 3}
+    healthMultiplier: 1.6
+    damageMultiplier: 1.6

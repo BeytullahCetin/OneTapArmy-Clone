@@ -12,8 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66697dc92d0cd042860aece1a8a4ecd, type: 3}
   m_Name: 4-Horseman
   m_EditorClassIdentifier: 
-  soldierName: Horseman
+  cardName: Horseman
   icon: {fileID: 21300000, guid: 90bdfca55556f7c4aa7e6565b0171c47, type: 3}
   health: 100
-  soldierPrefab: {fileID: 8791079033268047867, guid: 330e22d4767b5b245b7c474afc777fd3,
-    type: 3}
+  damage: 0
+  soldierLevels:
+  - icon: {fileID: 21300000, guid: 90bdfca55556f7c4aa7e6565b0171c47, type: 3}
+    description: '-'
+    soldierPrefab: {fileID: 2109519515210850127, guid: b9f01f506b32cc84dab07018497222c5,
+      type: 3}
+    healthMultiplier: 1
+    damageMultiplier: 1
+  - icon: {fileID: 21300000, guid: 1fa17815725c5a041b24a4dd51ff6a6c, type: 3}
+    description: 'Health +%20
+
+      Damage +%20'
+    soldierPrefab: {fileID: 2109519515210850127, guid: b9f01f506b32cc84dab07018497222c5,
+      type: 3}
+    healthMultiplier: 1.2
+    damageMultiplier: 1.2
+  - icon: {fileID: 21300000, guid: e0675568077fd734b92ea96b0846aadf, type: 3}
+    description: 'Health +%40
+
+      Damage +%40'
+    soldierPrefab: {fileID: 2109519515210850127, guid: b9f01f506b32cc84dab07018497222c5,
+      type: 3}
+    healthMultiplier: 1.4
+    damageMultiplier: 1.4
+  - icon: {fileID: 21300000, guid: f15166eb13f02a4448e4fdbf0b28ce36, type: 3}
+    description: 'Health +%60
+
+      Damage +%60'
+    soldierPrefab: {fileID: 2109519515210850127, guid: b9f01f506b32cc84dab07018497222c5,
+      type: 3}
+    healthMultiplier: 1.6
+    damageMultiplier: 1.6
+  - icon: {fileID: 21300000, guid: 86bfbee1c041d6841aed63959a23af04, type: 3}
+    description: 'Health +%80
+
+      Damage +%80'
+    soldierPrefab: {fileID: 2109519515210850127, guid: b9f01f506b32cc84dab07018497222c5,
+      type: 3}
+    healthMultiplier: 1.8
+    damageMultiplier: 1.8

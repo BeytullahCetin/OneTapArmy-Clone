@@ -6,11 +6,19 @@ public class DeckManager : MonoBehaviour
 {
 	[SerializeField] MainMenuManager mainMenuManager;
 	[SerializeField] SoldierDB soldierDB;
+	[SerializeField] TowerCardSO towerCardSO;
 	[SerializeField] DeckCard deckCardPrefab;
 
 	List<DeckCard> deckCards = new List<DeckCard>();
 
 	public SoldierDB SoldierDB => soldierDB;
+	public TowerCardSO TowerCardSO => towerCardSO;
+	public IEnumerable<SoldierCardSO> SpawnableSoldiers => SoldierDB.SoldierCards.Where(x => x.IsLocked() == false && x.IsSelected() == true);
+
+	public void ResetSoldierLevels()
+	{
+		soldierDB.SoldierCards.ForEach(x => x.CurrentCardLevelIndex = 0);
+	}
 
 	public void CreateDeckCards()
 	{
@@ -25,7 +33,7 @@ public class DeckManager : MonoBehaviour
 			deckCard.SelectButton.onClick.AddListener(() =>
 			{
 				if (deckCard.DeckCardSO.IsSelected() == true &&
-					deckCards.Select(x => x.DeckCardSO).Where(x => x.IsSelected() == true && x.IsLocked() == false).Count() <= 1)
+					deckCards.Select(x => x.DeckCardSO).Where(x => x.IsSelected() == true && x.IsLocked() == false).Count() <= 2)
 					return;
 
 				cardSO.SwitchSelectState();
@@ -39,15 +47,18 @@ public class DeckManager : MonoBehaviour
 			});
 		}
 
-		DeckCard firstCard = deckCards.First();
-		SoldierCardSO firstCardSO = firstCard.DeckCardSO;
+		List<DeckCard> cardsToUnlock = deckCards.Take(2).ToList();
 
-		if (firstCardSO.IsLocked() == true)
+		foreach (var card in cardsToUnlock)
 		{
-			firstCardSO.SetCardLock(false);
-			firstCardSO.SetSelectState(true);
-			firstCard.UpdateLockState();
-			firstCard.UpdateSelectState();
+			SoldierCardSO cardSO = card.DeckCardSO;
+			if (cardSO.IsLocked() == true)
+			{
+				cardSO.SetCardLock(false);
+				cardSO.SetSelectState(true);
+				card.UpdateLockState();
+				card.UpdateSelectState();
+			}
 		}
 	}
 

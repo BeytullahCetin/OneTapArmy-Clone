@@ -12,8 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66697dc92d0cd042860aece1a8a4ecd, type: 3}
   m_Name: 5-Giant
   m_EditorClassIdentifier: 
-  soldierName: Giant
+  cardName: Giant
   icon: {fileID: 21300000, guid: 5adef77c153e98645b65c121a88ede07, type: 3}
   health: 200
-  soldierPrefab: {fileID: 8791079033268047867, guid: 330e22d4767b5b245b7c474afc777fd3,
-    type: 3}
+  damage: 45
+  soldierLevels:
+  - icon: {fileID: 21300000, guid: 5adef77c153e98645b65c121a88ede07, type: 3}
+    description: '-'
+    soldierPrefab: {fileID: 2109519515210850127, guid: a3140d7226748cc44a1c1697f97d1e25,
+      type: 3}
+    healthMultiplier: 1
+    damageMultiplier: 1
+  - icon: {fileID: 21300000, guid: 764d8e8eba6857e4e94daf53698f6d30, type: 3}
+    description: 'Health +%25
+
+      Damage +%25'
+    soldierPrefab: {fileID: 2109519515210850127, guid: a3140d7226748cc44a1c1697f97d1e25,
+      type: 3}
+    healthMultiplier: 1.25
+    damageMultiplier: 1.25
+  - icon: {fileID: 21300000, guid: 785ba098b8710f740b709baa69427bb0, type: 3}
+    description: 'Health +%50
+
+      Damage +%50'
+    soldierPrefab: {fileID: 2109519515210850127, guid: a3140d7226748cc44a1c1697f97d1e25,
+      type: 3}
+    healthMultiplier: 1.5
+    damageMultiplier: 1.5
+  - icon: {fileID: 21300000, guid: 4d4c14ab318531c498794589514f5d8b, type: 3}
+    description: 'Health +%75
+
+      Damage +%75'
+    soldierPrefab: {fileID: 2109519515210850127, guid: a3140d7226748cc44a1c1697f97d1e25,
+      type: 3}
+    healthMultiplier: 1.75
+    damageMultiplier: 1.75
+  - icon: {fileID: 21300000, guid: 71d368cb934fc0a498747f1bc6b5e6cd, type: 3}
+    description: 'Health +%100
+
+      Damage +%100'
+    soldierPrefab: {fileID: 2109519515210850127, guid: a3140d7226748cc44a1c1697f97d1e25,
+      type: 3}
+    healthMultiplier: 2
+    damageMultiplier: 2

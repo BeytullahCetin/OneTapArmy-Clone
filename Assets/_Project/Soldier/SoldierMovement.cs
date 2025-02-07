@@ -21,6 +21,23 @@ public class SoldierMovement : MonoBehaviour
 		soldierAnimation = GetComponent<SoldierAnimation>();
 	}
 
+	public async void Move(Vector3 target)
+	{
+		if (CanMove() == false)
+			return;
+
+		bool isReached = await MoveToPosition(target);
+		if (isReached == false)
+			return;
+
+		soldierAnimation.StopRunAnimation();
+	}
+
+	private bool CanMove()
+	{
+		return true;
+	}
+
 	public void StopMovement()
 	{
 		moveCancellationToken?.Cancel();

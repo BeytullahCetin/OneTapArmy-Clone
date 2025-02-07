@@ -1,25 +1,24 @@
+using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "SoldierCardSO", menuName = "ScriptableObjects/SoldierCardSO")]
 
-public class SoldierCardSO : ScriptableObject
+public class SoldierCardSO : CardSO
 {
 	public UnityEvent CardStateChanged { get; private set; }
+	public UnityEvent CardUpgraded { get; private set; }
 
-	public string Name => soldierName;
-	public Sprite Icon => icon;
-	public float Health => health;
-	public Soldier SoldierPrefab => soldierPrefab;
+	public float Damage => damage;
+	public List<SoldierLevel> Levels => soldierLevels;
 
-	[SerializeField] string soldierName;
-	[ShowAssetPreview][SerializeField] Sprite icon;
-	[SerializeField] float health;
-	[SerializeField] Soldier soldierPrefab;
+	[SerializeField] float damage;
+	[SerializeField] List<SoldierLevel> soldierLevels = new List<SoldierLevel>();
 
-	string CardLockPPKey => $"Card_IsLocked_{soldierName}";
-	string CardSelectPPKey => $"Card_IsSelected_{soldierName}";
+	string CardLockPPKey => $"Card_IsLocked_{Name}";
+	string CardSelectPPKey => $"Card_IsSelected_{Name}";
 
 	public void SetPlayerPrefsIfNotExists()
 	{
@@ -79,4 +78,18 @@ public class SoldierCardSO : ScriptableObject
 	{
 		SetCardLock(true);
 	}
+
+	public override void UpgradeCard()
+	{
+		CurrentCardLevelIndex++;
+		//TODO: Event for particle effects
+	}
+}
+
+[Serializable]
+public class SoldierLevel : CardLevel
+{
+	public Soldier soldierPrefab;
+	public float healthMultiplier;
+	public float damageMultiplier;
 }

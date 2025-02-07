@@ -12,8 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66697dc92d0cd042860aece1a8a4ecd, type: 3}
   m_Name: 1-Swordsman
   m_EditorClassIdentifier: 
-  soldierName: Swordsman
+  cardName: Swordsman
   icon: {fileID: 21300000, guid: 930818ab3292c0f4fa93c955c7f12358, type: 3}
   health: 100
-  soldierPrefab: {fileID: 8791079033268047867, guid: 330e22d4767b5b245b7c474afc777fd3,
-    type: 3}
+  damage: 20
+  soldierLevels:
+  - icon: {fileID: 21300000, guid: 930818ab3292c0f4fa93c955c7f12358, type: 3}
+    description: '-'
+    soldierPrefab: {fileID: 2109519515210850127, guid: 3cc38728cf7c7d84e981b3d8bd00d04a,
+      type: 3}
+    healthMultiplier: 1
+    damageMultiplier: 1
+  - icon: {fileID: 21300000, guid: 9e7d569ef1320ef479464eeff3bb6068, type: 3}
+    description: 'Health +%10
+
+      Damage +%10'
+    soldierPrefab: {fileID: 2109519515210850127, guid: 3cc38728cf7c7d84e981b3d8bd00d04a,
+      type: 3}
+    healthMultiplier: 1.2
+    damageMultiplier: 1.2
+  - icon: {fileID: 21300000, guid: aaacd82dbdb41a64c88563b7e94284ff, type: 3}
+    description: 'Health +%20
+
+      Damage +%20'
+    soldierPrefab: {fileID: 2109519515210850127, guid: 3cc38728cf7c7d84e981b3d8bd00d04a,
+      type: 3}
+    healthMultiplier: 1.3
+    damageMultiplier: 1.3
+  - icon: {fileID: 21300000, guid: f577e98eb9439154faf8afe48fc09fa9, type: 3}
+    description: 'Health +%30
+
+      Damage +%30'
+    soldierPrefab: {fileID: 2109519515210850127, guid: 3cc38728cf7c7d84e981b3d8bd00d04a,
+      type: 3}
+    healthMultiplier: 1.4
+    damageMultiplier: 1.4
+  - icon: {fileID: 21300000, guid: 6abf0a759cbba0d4b9fef57c2054ea38, type: 3}
+    description: 'Health +%40
+
+      Damage +%40'
+    soldierPrefab: {fileID: 2109519515210850127, guid: 3cc38728cf7c7d84e981b3d8bd00d04a,
+      type: 3}
+    healthMultiplier: 1.5
+    damageMultiplier: 1.5

@@ -33,25 +33,20 @@ public class SoldierCommander : MonoBehaviour
 
 		RaycastHit hit = hits.OrderBy(x => (x.point - ray.origin).sqrMagnitude).First();
 
-
-		Debug.DrawRay(ray.origin, hit.point - ray.origin, Color.red, 2f);
-		Debug.Log($"Ray Hit! - {LayerMask.LayerToName(hit.transform.gameObject.layer)}");
-
 		EnemyTower enemyTower;
 		Soldier soldier;
 
-
 		if (hit.collider.TryGetComponent(out enemyTower))
 		{
-			towerSoldierController.Soldiers.ForEach(x => x.Attack(enemyTower.Tower.TowerHealth));
+			// towerSoldierController.Soldiers.ForEach(x => x.Attack(enemyTower.Tower.TowerHealth));
 		}
 		else if (hit.collider.TryGetComponent(out soldier))
 		{
-			towerSoldierController.Soldiers.ForEach(x => x.Attack(soldier.SoldierHealth));
+			// towerSoldierController.Soldiers.ForEach(x => x.Attack(soldier.SoldierHealth));
 		}
 		else
 		{
-			towerSoldierController.Soldiers.ForEach(x => x.Move(hit.point));
+			// towerSoldierController.Soldiers.ForEach(x => x.SoldierMovement.Move(hit.point));
 		}
 	}
 }
