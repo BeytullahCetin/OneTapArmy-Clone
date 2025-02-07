@@ -13,7 +13,7 @@ public abstract class Health : MonoBehaviour
 	protected abstract void UpdateHealthBar();
 	public abstract void Initialize(float maxHp);
 
-	private void Awake()
+	protected void Awake()
 	{
 		DeadEvent = new UnityEvent();
 	}

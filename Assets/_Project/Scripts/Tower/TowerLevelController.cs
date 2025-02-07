@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class TowerLevelController : MonoBehaviour
 {
+	DeckManager deckManager;
 	TowerHudController towerHudController;
 	TowerModelController towerModelController;
+	TowerHealthController towerHealthController;
 
 	public int Level
 	{
@@ -21,6 +23,8 @@ public class TowerLevelController : MonoBehaviour
 	{
 		towerHudController = GetComponent<TowerHudController>();
 		towerModelController = GetComponent<TowerModelController>();
+		towerHealthController = GetComponent<TowerHealthController>();
+		deckManager = FindAnyObjectByType<DeckManager>();
 	}
 
 	public void Initialize()
@@ -33,5 +37,11 @@ public class TowerLevelController : MonoBehaviour
 	{
 		towerHudController.Level.FillText($"{currentLevel}");
 		towerModelController.UpdateModel();
+		towerHealthController.UpdateHealthLevel(deckManager.TowerCardSO, deckManager.TowerCardSO.Levels[Level]);
+	}
+
+	public void IncreaseLevel()
+	{
+		Level++;
 	}
 }

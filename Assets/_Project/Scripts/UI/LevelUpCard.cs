@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelUpCard : MonoBehaviour
 {
-	public static UnityEvent OnCardLevelUp;
+	public static UnityEvent OnAnyCardLevelUp;
 
 	[SerializeField] Image iconImage;
 	[SerializeField] FormatableText cardName;
@@ -17,7 +17,8 @@ public class LevelUpCard : MonoBehaviour
 		iconImage.sprite = cardData.cardSO.Icon;
 		cardName.FillText(cardData.cardSO.Name);
 		cardDescription.FillText(cardData.level.description);
+
 		button.onClick.AddListener(cardData.cardSO.UpgradeCard);
-		button.onClick.AddListener(OnCardLevelUp.Invoke);
+		button.onClick.AddListener(OnAnyCardLevelUp.Invoke);
 	}
 }

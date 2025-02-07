@@ -19,29 +19,29 @@ MonoBehaviour:
   towerLevels:
   - icon: {fileID: 21300000, guid: 91c361bd8fd988a45a69c73ca7bfce69, type: 3}
     description: '-'
-    health: 1
+    healthMultiplier: 1
     spawnSpeedMultiplier: 1
   - icon: {fileID: 21300000, guid: 91c361bd8fd988a45a69c73ca7bfce69, type: 3}
     description: 'Health +%20
 
       Spawn Speed +%20'
-    health: 1.2
+    healthMultiplier: 1.2
     spawnSpeedMultiplier: 1.2
   - icon: {fileID: 21300000, guid: 626c7179b0710554e867656f96a239c2, type: 3}
     description: 'Health +%40
 
       Spawn Speed +%40'
-    health: 1.4
+    healthMultiplier: 1.4
     spawnSpeedMultiplier: 1.4
   - icon: {fileID: 21300000, guid: 84a02992b273404409c24906ed4d2abf, type: 3}
     description: 'Health +%60
 
       Spawn Speed +%60'
-    health: 1.6
+    healthMultiplier: 1.6
     spawnSpeedMultiplier: 1.6
   - icon: {fileID: 21300000, guid: d67748d1fd376584e9c79ce74fcc32ae, type: 3}
     description: 'Health +%80
 
       Spawn Speed +%80'
-    health: 1.8
+    healthMultiplier: 1.8
     spawnSpeedMultiplier: 1.8

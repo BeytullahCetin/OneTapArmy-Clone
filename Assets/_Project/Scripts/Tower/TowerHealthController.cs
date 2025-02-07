@@ -4,9 +4,14 @@ public class TowerHealthController : Health
 {
 	TowerHudController towerHudController;
 
+	protected void Awake()
+	{
+		base.Awake();
+		towerHudController = GetComponent<TowerHudController>();
+	}
+
 	public override void Initialize(float maxHp)
 	{
-		towerHudController = GetComponent<TowerHudController>();
 		towerHudController.HealthBar.minValue = 0;
 
 		this.maxHp = maxHp;
@@ -22,5 +27,18 @@ public class TowerHealthController : Health
 		towerHudController.HealthBar.value = currentHp;
 
 		towerHudController.Health.FillText($"{currentHp}", $"{maxHp}");
+	}
+
+	public void UpdateHealthLevel(TowerCardSO towerCardSO, TowerLevel towerLevel)
+	{
+		float oldMaxHp = maxHp;
+		maxHp = towerCardSO.Health * towerLevel.healthMultiplier;
+
+		if (currentHp == oldMaxHp)
+			currentHp = maxHp;
+		else
+			currentHp = currentHp * (maxHp / oldMaxHp);
+
+		UpdateHealthBar();
 	}
 }

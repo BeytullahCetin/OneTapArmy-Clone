@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "TowerCardSO", menuName = "ScriptableObjects/TowerCardSO")]
 
 public class TowerCardSO : CardSO
 {
+	public UnityEvent CardUpgraded { get; set; }
+
 	public List<TowerLevel> Levels => towerLevels;
 	public float SpawnSpeed => spawnSpeed;
 
@@ -14,7 +17,8 @@ public class TowerCardSO : CardSO
 
 	public override void UpgradeCard()
 	{
-		CurrentCardLevelIndex++;
+		CardUpgraded.Invoke();
+		// CurrentCardLevelIndex++;
 		// TODO: Update tower health and model
 	}
 }
@@ -22,6 +26,6 @@ public class TowerCardSO : CardSO
 [Serializable]
 public class TowerLevel : CardLevel
 {
-	public float health;
+	public float healthMultiplier;
 	public float spawnSpeedMultiplier;
 }

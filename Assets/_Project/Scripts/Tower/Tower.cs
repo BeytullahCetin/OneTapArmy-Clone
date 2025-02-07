@@ -8,8 +8,9 @@ public class Tower : MonoBehaviour
 	TowerSpawnBar towerSpawn;
 
 	public TowerHealthController TowerHealth => towerHealth;
+	public TowerLevelController TowerLevel => towerLevel;
 
-	float startingMaxHP = 3000;
+	[SerializeField] TowerCardSO towerCardSO;
 
 	private void Awake()
 	{
@@ -23,7 +24,7 @@ public class Tower : MonoBehaviour
 	{
 		towerLevel.Initialize();
 		towerModel.Initialize();
-		towerHealth.Initialize(startingMaxHP);
+		towerHealth.Initialize(towerCardSO.Health);
 		towerSpawn.Initialize();
 	}
 }

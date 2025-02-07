@@ -9,7 +9,6 @@ using UnityEngine.Events;
 public class SoldierCardSO : CardSO
 {
 	public UnityEvent CardStateChanged { get; private set; }
-	public UnityEvent CardUpgraded { get; private set; }
 
 	public float Damage => damage;
 	public List<SoldierLevel> Levels => soldierLevels;

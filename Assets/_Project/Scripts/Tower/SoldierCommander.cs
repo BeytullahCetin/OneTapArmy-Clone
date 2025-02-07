@@ -46,7 +46,7 @@ public class SoldierCommander : MonoBehaviour
 		}
 		else
 		{
-			// towerSoldierController.Soldiers.ForEach(x => x.SoldierMovement.Move(hit.point));
+			towerSoldierController.Soldiers.ForEach(x => x.SoldierMovement.Move(hit.point));
 		}
 	}
 }

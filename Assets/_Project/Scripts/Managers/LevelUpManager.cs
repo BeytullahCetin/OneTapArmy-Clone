@@ -15,14 +15,14 @@ public class LevelUpManager : MonoBehaviour
 	public void ShowLevelupCards(List<UpgradeCardData> rewards)
 	{
 		levelUp_UI.ClearLevelUpCards();
-		LevelUpCard.OnCardLevelUp = new UnityEvent();
+		LevelUpCard.OnAnyCardLevelUp = new UnityEvent();
 
 		foreach (UpgradeCardData card in rewards)
 		{
 			LevelUpCard levelUpCard = Instantiate(levelUpCardPrefab, levelUp_UI.LevelUpCardsParent);
 			levelUpCard.SetCard(card);
 
-			LevelUpCard.OnCardLevelUp.AddListener(() =>
+			LevelUpCard.OnAnyCardLevelUp.AddListener(() =>
 			{
 				levelUp_UI.DisableLevelUpCardsPanel();
 				ResumeGame();
